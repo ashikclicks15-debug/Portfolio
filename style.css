@@ -5,10 +5,10 @@
    ========================================================= */
 
 :root {
-  --mist: #F1F3EE;
-  --mist-deep: #E3E8E0;
+  --mist: #F3F6FB;
+  --mist-deep: #E4EAF4;
   --ink: #16262B;
-  --ink-soft: #4A5A5E;
+  --ink-soft: #4A5A6A;
   --paddy: #3F6B4A;
   --sun: #E8A33D;
   --dusk: #16233B;
@@ -62,14 +62,13 @@ a { color: inherit; }
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  color: var(--pale);
+  color: var(--ink);
   background: linear-gradient(
     180deg,
-    #16233B 0%,
-    #26365C 40%,
-    #7E6783 62%,
-    #D98F6A 78%,
-    #F4C98A 100%
+    #F4F8FD 0%,
+    #E3ECF8 40%,
+    #CFDDF0 70%,
+    #B9CDE8 100%
   );
 }
 
@@ -77,7 +76,7 @@ a { color: inherit; }
 .hero-night {
   position: absolute;
   inset: 0;
-  background: #0A1020;
+  background: #FFFFFF;
   opacity: 0;
   animation: dawn 3.2s ease-out both;
   pointer-events: none;
@@ -91,7 +90,7 @@ a { color: inherit; }
   aspect-ratio: 1;
   border-radius: 50%;
   background: radial-gradient(circle at 50% 50%, #FFE7A8 0%, #F7BC5C 55%, #EE9B3F 100%);
-  box-shadow: 0 0 120px 40px rgba(247, 188, 92, 0.45);
+  box-shadow: 0 0 110px 36px rgba(247, 170, 70, 0.5);
   animation: rise 3.2s cubic-bezier(0.25, 0.7, 0.2, 1) both;
 }
 
@@ -104,8 +103,8 @@ a { color: inherit; }
   height: 24%;
   min-height: 7rem;
 }
-.ground-back  { fill: #2B403A; }
-.ground-front { fill: #12211D; }
+.ground-back  { fill: #AFC3DB; }
+.ground-front { fill: #7F9BBE; }
 
 @keyframes rise {
   from { transform: translateY(75%); }
@@ -180,7 +179,7 @@ a { color: inherit; }
   margin: 0.75rem 0 0;
   max-width: 32rem;
   font-size: 1.05rem;
-  color: var(--pale-soft);
+  color: var(--ink-soft);
 }
 
 .hero-actions {
@@ -210,13 +209,28 @@ a { color: inherit; }
 .btn-sun:hover { background: #F2B756; }
 
 .btn-ghost {
-  border-color: var(--pale);
-  color: var(--pale);
-  background: rgba(10, 16, 32, 0.25);
+  border-color: var(--ink);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.45);
 }
 .btn-ghost:hover {
-  background: var(--pale);
-  color: var(--dusk);
+  background: var(--ink);
+  color: var(--pale);
+}
+
+/* Your own portrait in place of the sun (images/portrait.jpg).
+   The script adds "has-portrait" only when the photo exists. */
+.sun.has-portrait {
+  width: clamp(13rem, 30vw, 26rem);
+  bottom: 21%;
+  background: var(--portrait) center / cover no-repeat;
+  box-shadow:
+    0 0 0 7px #F7BC5C,
+    0 0 0 11px rgba(255, 255, 255, 0.55),
+    0 0 110px 40px rgba(247, 170, 70, 0.5);
+}
+.hero.has-portrait-hero .hero-title {
+  font-size: clamp(3.2rem, 8vw, 7rem);
 }
 
 /* ---------- Sections ---------- */
@@ -389,8 +403,8 @@ a { color: inherit; }
   position: relative;
   overflow: hidden;
   padding-block: clamp(4.5rem, 10vw, 8rem);
-  background: linear-gradient(180deg, var(--dusk) 0%, var(--dusk-deep) 100%);
-  color: var(--pale);
+  background: linear-gradient(180deg, #E9EEF7 0%, #DCE5F2 100%);
+  color: var(--ink);
 }
 
 .moon {
@@ -400,13 +414,13 @@ a { color: inherit; }
   width: clamp(5rem, 13vw, 10rem);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle at 36% 34%, #FFFAEA 0%, #EFE3C0 62%, #D9CCA6 100%);
-  box-shadow: 0 0 90px 24px rgba(255, 244, 214, 0.22);
+  background: radial-gradient(circle at 36% 34%, #FFFDF4 0%, #F6E9BF 60%, #EBD79A 100%);
+  box-shadow: 0 0 0 1px rgba(200, 170, 90, 0.35), 0 14px 44px rgba(110, 125, 165, 0.28);
 }
 
 .night .wrap { position: relative; }
 
-.h2-light { color: var(--pale); }
+.h2-light { color: var(--ink); }
 
 .dedication {
   margin: 1.5rem 0 0;
@@ -423,16 +437,16 @@ a { color: inherit; }
 .dedication .dedication-to {
   margin-top: 1.5rem;
   font-size: clamp(1.15rem, 2.4vw, 1.5rem);
-  color: var(--pale-soft);
+  color: var(--ink-soft);
 }
 
 .contact {
   margin-top: clamp(4rem, 9vw, 7rem);
   padding-top: 2.5rem;
-  border-top: 1px solid rgba(201, 208, 224, 0.3);
+  border-top: 1px solid rgba(22, 38, 43, 0.2);
 }
 
-.lead-light { color: var(--pale-soft); }
+.lead-light { color: var(--ink-soft); }
 
 .contact-list { margin: 0; padding: 0; max-width: 44rem; }
 
@@ -441,13 +455,13 @@ a { color: inherit; }
   gap: 0.25rem 2rem;
   grid-template-columns: minmax(0, 1fr);
   padding-block: 1.1rem;
-  border-bottom: 1px solid rgba(201, 208, 224, 0.2);
+  border-bottom: 1px solid rgba(22, 38, 43, 0.15);
 }
 
 .contact-row dt {
   font-family: var(--ui);
   font-weight: 600;
-  color: var(--pale-soft);
+  color: var(--ink-soft);
 }
 
 .contact-row dd {
@@ -464,17 +478,17 @@ a { color: inherit; }
   text-underline-offset: 4px;
   overflow-wrap: anywhere;
 }
-.contact-row a:hover { color: #FFD58A; }
+.contact-row a:hover { color: #8A5A00; }
 
 /* ---------- Footer ---------- */
 
 .footer {
-  background: var(--dusk-deep);
-  color: var(--pale-soft);
+  background: #DCE5F2;
+  color: var(--ink-soft);
   font-family: var(--ui);
   font-size: 0.95rem;
   padding-block: 1.75rem;
-  border-top: 1px solid rgba(201, 208, 224, 0.15);
+  border-top: 1px solid rgba(22, 38, 43, 0.12);
 }
 
 .footer-in {
@@ -563,6 +577,15 @@ a { color: inherit; }
   .grid { column-gap: 0.6rem; }
   .tile { margin-bottom: 0.6rem; }
   .sun { right: 8%; bottom: 20%; }
+  .hero { min-height: max(100svh, 54rem); }
+  .sun.has-portrait {
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: min(52vw, 13rem);
+    bottom: 13%;
+  }
+  .hero.has-portrait-hero .hero-title { font-size: clamp(3rem, 15vw, 5rem); }
   .lightbox { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr auto; padding-top: 4rem; }
   .lb-figure { grid-column: 1 / -1; grid-row: 1; }
   .lb-prev, .lb-next { grid-row: 2; }

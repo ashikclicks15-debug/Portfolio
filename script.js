@@ -29,6 +29,33 @@ const SITE = {
 const EXTENSIONS = ["jpg", "jpeg", "png", "webp", "JPG", "JPEG", "PNG", "WEBP"];
 const RATIOS = ["4 / 5", "1 / 1", "3 / 2", "4 / 5", "3 / 4", "1 / 1"];
 
+/* ---------- Your portrait in place of the sun ----------
+   Put your photo in the images folder and name it portrait.jpg
+   (portrait.png, portrait.jpeg or portrait.webp also work).
+   If no photo is found, the sun stays. */
+(function () {
+  const hero = document.getElementById("top");
+  const sun = document.getElementById("sun");
+  const types = ["jpg", "jpeg", "png", "webp", "JPG", "JPEG", "PNG", "WEBP"];
+  const probe = new Image();
+  let n = 0;
+  function tryNext() {
+    probe.src = `images/portrait.${types[n++]}`;
+  }
+  probe.onload = () => {
+    sun.style.setProperty("--portrait", `url("${probe.src}")`);
+    sun.classList.add("has-portrait");
+    hero.classList.add("has-portrait-hero");
+    sun.removeAttribute("aria-hidden");
+    sun.setAttribute("role", "img");
+    sun.setAttribute("aria-label", "Arafatul Islam Ashik with his camera");
+  };
+  probe.onerror = () => {
+    if (n < types.length) tryNext();
+  };
+  tryNext();
+})();
+
 /* ---------- Build the photo list ---------- */
 
 const photos = [];
