@@ -1,6 +1,8 @@
 Put your photos in this folder with EXACTLY these names (lowercase).
 The extension can be .jpg, .jpeg, .png or .webp.
 
+portrait   (your photo shown in the round frame at the top, optional)
+
 nature-1   nature-2   nature-3      (Nature)
 rural-1    rural-2    rural-3       (Rural life)
 flower-1   flower-2   flower-3      (Flowers)
