@@ -109,39 +109,90 @@
           <p>I dedicate every photograph I take to the person who inspired me to pick up a camera for the first time.</p>
           <p class="dedication-to">I'm talking to you, Asla. You are still my inspiration and you always will be.</p>
         </blockquote>
+      </div>
+    </section>
 
-        <div class="contact" id="contact">
-          <h2 class="h2 h2-light">Contact</h2>
+    <!-- ===== Contact (photo background) ===== -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+          <h2 class="h2 h2-light" id="contact-title">Contact</h2>
           <p class="lead lead-light">For bookings, questions or a chat about photography, reach out in any of these ways.</p>
 
-          <dl class="contact-list">
-            <div class="contact-row">
-              <dt>Email</dt>
-              <dd><a href="mailto:ashikclicks15@gmail.com">ashikclicks15@gmail.com</a></dd>
+          <div class="contact-grid no-photo">
+            <div class="contact-form-wrap">
+              <h3 class="form-title">Let's connect, collaborate and create together</h3>
+              <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <label class="field">
+                  <span>Your name</span>
+                  <input type="text" name="name" required autocomplete="name">
+                </label>
+                <label class="field">
+                  <span>Your email</span>
+                  <input type="email" name="email" required autocomplete="email">
+                </label>
+                <label class="field">
+                  <span>Your message</span>
+                  <textarea name="message" rows="4" required></textarea>
+                </label>
+                <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <div class="form-actions">
+                  <button class="btn btn-sun" type="submit" id="send-btn">Send message</button>
+                  <button class="btn btn-ghost" type="button" id="wa-send">Send on WhatsApp</button>
+                </div>
+                <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+              </form>
             </div>
-            <div class="contact-row">
-              <dt>WhatsApp</dt>
-              <dd>
-                <a href="https://wa.me/8801829565566" target="_blank" rel="noopener">01829565566</a>
-                <a href="https://wa.me/8801576463816" target="_blank" rel="noopener">01576463816</a>
-              </dd>
-            </div>
-            <div class="contact-row">
-              <dt>Facebook</dt>
-              <dd>
-                <a href="https://www.facebook.com/share/18pBsD7XkM/" target="_blank" rel="noopener">আরাফাতুল ইসলাম আশিক</a>
-                <a href="https://www.facebook.com/share/1GRDeRZZmm/" target="_blank" rel="noopener">আরাফাতুল আশিক</a>
-              </dd>
-            </div>
-            <div class="contact-row">
-              <dt>Instagram</dt>
-              <dd>
-                <a href="https://www.instagram.com/isshak_am_15/" target="_blank" rel="noopener">@isshak_am_15</a>
-                <a href="https://www.instagram.com/asla15clicks/" target="_blank" rel="noopener">@asla15clicks</a>
-              </dd>
-            </div>
-          </dl>
-        </div>
+          </div>
+
+          <ul class="crows">
+            <li class="crow crow-link-row">
+              <span class="cicon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg>
+              </span>
+              <div class="cbody">
+                <span class="clabel">Email</span>
+                <a class="cvalue" href="mailto:ashikclicks15@gmail.com">ashikclicks15@gmail.com</a>
+              </div>
+              <span class="carrow" aria-hidden="true">&#8599;</span>
+            </li>
+
+            <li class="crow">
+              <span class="cicon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 4.2-1.1l3.8 1-1-3.7A8.5 8.5 0 0 0 12 3.5z"/></svg>
+              </span>
+              <div class="cbody">
+                <span class="clabel">WhatsApp</span>
+                <a class="cvalue" href="https://wa.me/8801829565566" target="_blank" rel="noopener">01829565566</a>
+                <a class="cvalue" href="https://wa.me/8801576463816" target="_blank" rel="noopener">01576463816</a>
+                <div class="ccopy">
+                  <button type="button" class="pill" data-copy="01829565566">Copy first number</button>
+                  <button type="button" class="pill" data-copy="01576463816">Copy second number</button>
+                </div>
+              </div>
+            </li>
+
+            <li class="crow">
+              <span class="cicon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8.5V7a1.5 1.5 0 0 1 1.5-1.5H17V2.5h-2.5A3.5 3.5 0 0 0 11 6v2.5H8.5v3H11v10h3v-10h2.6l.4-3z"/></svg>
+              </span>
+              <div class="cbody">
+                <span class="clabel">Facebook</span>
+                <a class="cvalue" href="https://www.facebook.com/share/18pBsD7XkM/" target="_blank" rel="noopener">আরাফাতুল ইসলাম আশিক</a>
+                <a class="cvalue" href="https://www.facebook.com/share/1GRDeRZZmm/" target="_blank" rel="noopener">আরাফাতুল আশিক</a>
+              </div>
+            </li>
+
+            <li class="crow">
+              <span class="cicon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="0.6" fill="currentColor"/></svg>
+              </span>
+              <div class="cbody">
+                <span class="clabel">Instagram</span>
+                <a class="cvalue" href="https://www.instagram.com/isshak_am_15/" target="_blank" rel="noopener">@isshak_am_15</a>
+                <a class="cvalue" href="https://www.instagram.com/asla15clicks/" target="_blank" rel="noopener">@asla15clicks</a>
+              </div>
+            </li>
+          </ul>
       </div>
     </section>
   </main>
