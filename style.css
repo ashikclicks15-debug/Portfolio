@@ -840,3 +840,13 @@ a { color: inherit; }
   .contact-section .contact-grid,
   .contact-section .crows { max-width: none; }
 }
+
+
+/* ---------- About: paper texture background ---------- */
+
+#about {
+  background-color: #F3EBDD;
+  background-image: url("images/about-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
