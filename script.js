@@ -271,3 +271,88 @@ viewer.addEventListener("touchend", (e) => {
 /* ---------- Footer year ---------- */
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+
+/* ---------- Contact form ----------
+   "Send message" goes to your email through Formspree.
+   Replace YOUR_FORM_ID in index.html with your own Formspree form ID.
+   "Send on WhatsApp" opens WhatsApp with the message already typed. */
+
+(function () {
+  const form = document.getElementById("contact-form");
+  if (!form) return;
+  const status = document.getElementById("form-status");
+  const sendBtn = document.getElementById("send-btn");
+  const waBtn = document.getElementById("wa-send");
+  const WHATSAPP_NUMBER = "8801829565566";
+
+  function say(text, kind) {
+    status.textContent = text;
+    status.className = "form-status" + (kind ? " is-" + kind : "");
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (form.action.includes("YOUR_FORM_ID")) {
+      say("The email form is not connected yet. Please use WhatsApp or the email address below.", "error");
+      return;
+    }
+    sendBtn.disabled = true;
+    say("Sending...");
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      });
+      if (res.ok) {
+        form.reset();
+        say("Thank you! Your message has been sent. I will reply soon.", "ok");
+      } else {
+        say("Sorry, something went wrong. Please try WhatsApp or email instead.", "error");
+      }
+    } catch (err) {
+      say("No connection. Please check your internet and try again.", "error");
+    }
+    sendBtn.disabled = false;
+  });
+
+  waBtn.addEventListener("click", () => {
+    const name = form.elements.name.value.trim();
+    const message = form.elements.message.value.trim();
+    if (!message) {
+      say("Please write your message first.", "error");
+      form.elements.message.focus();
+      return;
+    }
+    const text = (name ? "Hello, I am " + name + ".\n" : "Hello,\n") + message;
+    window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text), "_blank", "noopener");
+    say("");
+  });
+})();
+
+
+/* ---------- Copy phone number buttons ---------- */
+
+document.querySelectorAll("[data-copy]").forEach((btn) => {
+  const original = btn.textContent;
+  btn.addEventListener("click", async () => {
+    const value = btn.dataset.copy;
+    try {
+      await navigator.clipboard.writeText(value);
+    } catch (err) {
+      const t = document.createElement("textarea");
+      t.value = value;
+      document.body.appendChild(t);
+      t.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      t.remove();
+    }
+    btn.textContent = "Copied";
+    btn.classList.add("is-copied");
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.classList.remove("is-copied");
+    }, 1600);
+  });
+});
